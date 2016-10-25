@@ -1,0 +1,12 @@
+.bg_light {
+    background: url('../img/bg.jpg') no-repeat center right fixed; background-size: contain;
+}
+
+@media screen and (max-width: 1000px) {
+    .bg_light {
+        background: none;
+    }
+}
+
+
+

@@ -7,6 +7,7 @@
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/tachyons.min.css') }}">
     <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -21,7 +22,7 @@
     </script>
 </head>
 <body class="bg-white black-80 h-100">
-<div class="cf h-100 min-h-100" style="background: url(./img/bg.jpg) no-repeat center right fixed; background-size: contain;">
+<div class="cf h-100 min-h-100 bg_light">
     <div class="h-100 fl ma0 pa3 pa4-ns bg-white black-70 measure-narrow f3 times"  >
 
         <header class="bb b--black-70 pv4">
@@ -36,13 +37,13 @@
 
         <footer id="contact" class="pt3 ph3 ph5-ns tc">
             <a class="link dim gray dib h2 w3 br-100 mr3 " href="#" title="">
-                <img src="img/github.svg" />
+                <img src="{{ asset('img/github.svg') }}" />
             </a>
             <a class="link dim gray dib h2 w3 br-100 mr3 " href="#" title="">
-                <img src="img/linkedin.svg" />
+                <img src="{{ asset('img/linkedin.svg') }}" />
             </a>
             <a class="link dim gray dib h2 w3 br-100 mr3 " href="#" title="">
-                <img src="img/twitter.svg" />
+                <img src="{{ asset('img/twitter.svg') }}" />
             </a>
         </footer>
     </div>
