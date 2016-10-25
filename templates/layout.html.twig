@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html class="h-100" lang="{% block lang '' %}">
+<html class="h-100" lang="{{ lang }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>{% block title '' %}</title>
+    <title>{{ title }}</title>
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,11 +26,10 @@
 
         <header class="bb b--black-70 pv4">
             <h3 class="f2 fw7 ttu tracked lh-title mt0 mb3 avenir">Adrien Petitjean</h3>
-            <h2 class="f3 fw4 i lh-title mt0">Développeur web</h2>
+            <h2 class="f3 fw4 i lh-title mt0">{{ h2 }}</h2>
         </header>
 
         <section class="pt5 pb4 ma0">
-
             {% block content %}{% endblock %}
         </section>
 

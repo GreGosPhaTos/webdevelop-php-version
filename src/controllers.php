@@ -8,8 +8,25 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
-$app->get('/', function () use ($app) {
-    return $app['twig']->render('index.html.twig', array());
+$app->get('/', function (Request $request) use ($app) {
+    $supportedLanguages = ['default' => 'en', 'fr'];
+    if ($lang = $request->get('lang') and !in_array($lang, $supportedLanguages)) {
+        $lang = null;
+    }
+
+    if (empty($lang) and (in_array($request->getLanguages()[0], $supportedLanguages))) {
+        $lang = $request->getLanguages()[0];
+    }
+
+    if (empty($lang) and (in_array($request->getLanguages()[1], $supportedLanguages))) {
+        $lang = $request->getLanguages()[1];
+    }
+
+    if (empty($lang)) {
+        $lang = $supportedLanguages['default'];
+    }
+
+    return $app['twig']->render(sprintf('index.%s.html.twig', $lang), $app['pages']['index'][$lang]);
 })
 ->bind('homepage')
 ;
