@@ -4,3 +4,6 @@ LICENSE
 var/
 vendor/
 README.rst
+.htaccess
+web/.htaccess
+php.ini

@@ -4,13 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>{{ title }}</title>
-    <meta name="author" content="">
-    <meta name="description" content="">
+    <meta name="author" content="webdevelop">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-language" content="{{ lang }}" />
+    <meta name="ROBOTS" content="index, follow" />
+    <meta name="Revisit-after" content="7 days" />
+    <meta name="rating" content="general" />
+    <meta name="dc.description" content="{{ metaDesc }}" />
+    <meta name="keywords" content="{{ metaKeywords }}" />
+    <meta name="description" content="{{ metaDesc }}" />
+    <!-- GOOGLE -->
+    <meta name="verify-v1" content="1LpYuCxQDl9iWbr66GRZhqUQUuMlRaX6fNkHpNekeA4=" />
+    <!-- YAHOO -->
+    <meta name="y_key" content="f1b1ecf1d1f8026f" />
+
     <link rel="stylesheet" href="{{ asset('css/tachyons.css') }}">
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+        _gaq.push(['_setAccount', {{ gaId }}]);
         _gaq.push(['_trackPageview']);
 
         (function() {
@@ -34,13 +45,13 @@
         </section>
 
         <footer id="contact" class="pt3 ph3 ph5-ns tc">
-            <a class="link dim gray dib h2 w3 br-100 mr3 " href="#" title="">
+            <a class="link dim gray dib h2 w3 br-100 mr3 " href="https://github.com/GreGosPhaTos" title="Github">
                 <img src="{{ asset('img/github.svg') }}" />
             </a>
-            <a class="link dim gray dib h2 w3 br-100 mr3 " href="#" title="">
+            <a class="link dim gray dib h2 w3 br-100 mr3 " href="https://www.linkedin.com/in/adrien-petitjean-10916255" title="linkedin">
                 <img src="{{ asset('img/linkedin.svg') }}" />
             </a>
-            <a class="link dim gray dib h2 w3 br-100 mr3 " href="#" title="">
+            <a class="link dim gray dib h2 w3 br-100 mr3 " href="https://twitter.com/adPetitjean" title="Twitter">
                 <img src="{{ asset('img/twitter.svg') }}" />
             </a>
         </footer>
