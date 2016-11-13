@@ -23,4 +23,3 @@ deploy:
   script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/web $DEPLOY_USER@$DEPLOY_HOST:staging
   on:
     branch: master
-
