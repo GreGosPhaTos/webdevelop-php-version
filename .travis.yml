@@ -23,10 +23,10 @@ after_success:
   - mv * build
   - tar -czf package.tgz build
   - ls -la build/
-  - export SSHPASS=$DEPLOY_PASS
+#  - export SSHPASS=$DEPLOY_PASS
   - sshpass --help
   - echo $DEPLOY_HOST
-  - sshpass -e scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:staging
+  - sshpass -p $DEPLOY_PASS scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:staging
 
 #deploy:
 #  provider: script
