@@ -12,10 +12,18 @@ before_script:
   - composer install --prefer-source
 
 addons:
-#  ssh_known_hosts: "$DEPLOY_HOST"
+  ssh_known_hosts: "$DEPLOY_HOST"
   apt:
     packages:
       - sshpass
+
+
+before_deploy:
+  - openssl aes-256-cbc aes-256-cbc -K $encrypted_<...>_key -iv $encrypted_<...>_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+  - eval "$(ssh-agent -s)"
+  - mv deploy_rsa /tmp/deploy_rsa
+  - chmod 600 /tmp/deploy_rsa
+  - ssh-add /tmp/deploy_rsa
 
 after_success:
   - composer install --no-dev -o
@@ -24,12 +32,7 @@ after_success:
   - tar -czf package.tgz build
   - export SSHPASS=$DEPLOY_PASS
   - curl --ftp-create-dirs -T package.tgz -u $DEPLOY_USER:$DEPLOY_PASS ftp://$DEPLOY_HOST/staging/package.tgz
-  - sshpass -e ssh $DEPLOY_USER@$DEPLOY_HOST staging/test.sh
+#  - sshpass -e ssh $DEPLOY_USER@$DEPLOY_HOST staging/test.sh
+  - ssh $DEPLOY_USER@$DEPLOY_HOST staging/test.sh
 #  - sshpass -p $DEPLOY_PASS scp -o stricthostkeychecking=no package.tgz $DEPLOY_USER@$DEPLOY_HOST:/staging
 
-#deploy:
-#  provider: script
-#  skip_cleanup: true
-#  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/web $DEPLOY_USER@$DEPLOY_HOST:staging
-#  on:
-#    branch: master
