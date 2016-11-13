@@ -18,5 +18,5 @@ $app->register(new WebProfilerServiceProvider(), array(
 ));
 
 // overwrite twig
-$app['pages']['index']['en']['gaId'] =
-$app['pages']['index']['fr']['gaId'] = 'UA-XXXXXXXX-X';
+//$app['pages']['index']['en']['gaId'] = 'UA-XXXXXXXX-X';
+//$app['pages']['index']['fr']['gaId'] = 'UA-XXXXXXXX-X';

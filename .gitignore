@@ -7,3 +7,6 @@ README.rst
 .htaccess
 web/.htaccess
 php.ini
+deploy_rsa
+deploy_rsa.pub
+.htaccess*

@@ -13,7 +13,7 @@ $app['pages'] = array(
             'metaKeywords' => 'Adrien Petitjean, web developer, software engineer',
             'title' => 'Adrien Petitjean - Web developer',
             'h2' => 'Web developer',
-            'gaId' => "UA-12007647-1",
+            'gaId' => "UA-XXXXXXXX-X",
         ),
         'fr' => array(
             'lang' => 'fr',
@@ -21,7 +21,7 @@ $app['pages'] = array(
             'metaKeywords' => 'Adrien Petitjean, développeur web, software Engineer, PHP, SQL, nodeJs,  JavaScript, AJAX, web',
             'title' => 'Développeur Web : Adrien Petitjean - webdevelop.fr ',
             'h2' => 'Développeur web',
-            'gaId' => "UA-12007647-1",
+            'gaId' => "UA-XXXXXXXX-X",
         )
     )
 );

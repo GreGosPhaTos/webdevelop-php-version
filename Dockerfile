@@ -3,6 +3,10 @@ FROM php:7.0-apache
 # Type docker-php-ext-install to see available extensions
 RUN docker-php-ext-install pdo pdo_mysql
 
+# git
+RUN apt-get update \
+    && apt-get install -y git
+
 # composer
 RUN php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin --filename=composer
 
