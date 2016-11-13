@@ -21,9 +21,10 @@ after_success:
   - composer install --no-dev -o
   - mkdir build
   - mv * build
-  - ls -la
   - tar -czf package.tgz build
+  - ls -la
   - export SSHPASS=$DEPLOY_PASS
+  - sshpass --help
   - sshpass -e scp package.tgz $DEPLOY_USER@$DEPLOY_HOST
 
 #deploy:
