@@ -6,9 +6,11 @@ env:
 
 language: php
 php:
-  - '5.5'
-  - '5.6'
   - '7.0'
+
+before_script:
+  - composer install --prefer-source
+  - npm install
 
 addons:
   ssh_known_hosts: "$DEPLOY_HOST"
@@ -17,6 +19,7 @@ addons:
       - sshpass
 
 after_success:
+  - composer install --no-dev -o
   - mkdir build
   - mv * build
   - tar -czf package.tgz build
