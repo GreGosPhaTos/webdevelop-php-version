@@ -12,7 +12,7 @@ before_script:
   - composer install --prefer-source
 
 addons:
-  ssh_known_hosts: "$DEPLOY_HOST"
+#  ssh_known_hosts: "$DEPLOY_HOST"
   apt:
     packages:
       - sshpass
@@ -25,7 +25,8 @@ after_success:
   - ls -la build/
   - export SSHPASS=$DEPLOY_PASS
   - sshpass --help
-  - sshpass -e scp package.tgz $DEPLOY_USER@$DEPLOY_HOST
+  - echo $DEPLOY_HOST
+  - sshpass -e scp package.tgz $DEPLOY_USER@$DEPLOY_HOST:staging
 
 #deploy:
 #  provider: script
