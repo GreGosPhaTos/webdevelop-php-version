@@ -22,11 +22,8 @@ after_success:
   - mkdir build
   - mv * build
   - tar -czf package.tgz build
-  - ls -la build/
-#  - export SSHPASS=$DEPLOY_PASS
-  - sshpass --help
-  - echo $DEPLOY_HOST
-  - sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_HOST ls
+  - curl --ftp-create-dirs -T package.tgz -u $DEPLOY_USER:$DEPLOY_PASS ftp://$DEPLOY_HOST/staging/package.tgz
+  - sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_HOST staging/test.sh
 #  - sshpass -p $DEPLOY_PASS scp -o stricthostkeychecking=no package.tgz $DEPLOY_USER@$DEPLOY_HOST:/staging
 
 #deploy:
