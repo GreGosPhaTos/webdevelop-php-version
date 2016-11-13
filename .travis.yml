@@ -22,7 +22,7 @@ after_success:
   - mkdir build
   - mv * build
   - tar -czf package.tgz build
-  - ls -la
+  - ls -la build/
   - export SSHPASS=$DEPLOY_PASS
   - sshpass --help
   - sshpass -e scp package.tgz $DEPLOY_USER@$DEPLOY_HOST
