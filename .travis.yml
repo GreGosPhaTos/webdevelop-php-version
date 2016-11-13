@@ -26,7 +26,9 @@ after_success:
 #  - export SSHPASS=$DEPLOY_PASS
   - sshpass --help
   - echo $DEPLOY_HOST
-  - sshpass -p $DEPLOY_PASS scp -o stricthostkeychecking=no package.tgz $DEPLOY_USER@$DEPLOY_HOST:/staging
+  - sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_HOST:/staging
+  - ls -la
+#  - sshpass -p $DEPLOY_PASS scp -o stricthostkeychecking=no package.tgz $DEPLOY_USER@$DEPLOY_HOST:/staging
 
 #deploy:
 #  provider: script
