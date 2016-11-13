@@ -5,11 +5,11 @@ env:
   - secure: KepQeHx2K/cN7BEFLzzmRswVtt1J9kyLw552fvEaVl5oavyBdnCnjdUVIvsMGlnue4JvCNfeJQI0e3akD5ce0OO4XN7wEvllTzN/5a1yLMsjymDCn/jJiepJY+cxHHZupL653uubyZyy3NuxvCB7V6Uj9TMb4elSLyus7a40AuMy2UHO8fURCqfovErCWGevR7QNQWcgUEVRbA/tRsx4iBruvwV/DYb02Y0KnZAqTL6TuRK639adkxiSomHcvLRJ/L1DeL8/8sHdwlsONz2jziTlCKI/BqWSpxT8qqGArnC6w+UbALCSWX+28Kq+Hgn8Za0jY46wfhmh8d7Er0FPGKGnIla6N5hjRQjzXHZcUuZGIDJTYqKqv9fsW3R3MZtKvCCQgn+dHcGSM2nToXV3skGx+9BYXXb9vfzp7X/b05ym/Rop8WAFyW1EtYp+0q97xQ5V8VMqCpHqhQPN2Sxz9VX1yD+eo6AOGSz4YWgYVHMnRpre/HG8Vx4lySyNr0f0+pSirSg5RNpZ0be5wGZeYuioaT+n1MZwV7ImU8yyKiBk999PkjSORyh9P9v69j/I+1GMJgezcEVPHu6oweWjo84BkKkmtIiM/YC9pMDBkKglqL1xhBjbXhRLrUzsabAcP8gD4+yKPAYMkTBJvjakrkCDpkPXKImy09dogLbmnCM=
 
 language: php
-#php:
-#  - '7.0'
-#
-#before_script:
-#  - composer install --prefer-source
+php:
+  - '7.0'
+
+before_script:
+  - composer install --prefer-source
 
 addons:
   ssh_known_hosts: "$DEPLOY_HOST"
