@@ -33,6 +33,6 @@ after_success:
   - export SSHPASS=$DEPLOY_PASS
   - curl --ftp-create-dirs -T package.tgz -u $DEPLOY_USER:$DEPLOY_PASS ftp://$DEPLOY_HOST/staging/package.tgz
 #  - sshpass -e ssh $DEPLOY_USER@$DEPLOY_HOST staging/test.sh
-  - ssh $DEPLOY_USER@$DEPLOY_HOST staging/test.sh
+  - ssh -o stricthostkeychecking=no $DEPLOY_USER@$DEPLOY_HOST staging/test.sh
 #  - sshpass -p $DEPLOY_PASS scp -o stricthostkeychecking=no package.tgz $DEPLOY_USER@$DEPLOY_HOST:/staging
 
