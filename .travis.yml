@@ -26,12 +26,12 @@ after_success:
   - composer install --no-dev -o
   - mkdir build
   - mv * build
-  - rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/ $DEPLOY_USER@$DEPLOY_HOST:/staging/
+#  - rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/ $DEPLOY_USER@$DEPLOY_HOST:/staging/
 
-#  - tar -czf package.tgz build
-#  - export SSHPASS=$DEPLOY_PASS
-#  - curl --ftp-create-dirs -T package.tgz -u $DEPLOY_USER:$DEPLOY_PASS ftp://$DEPLOY_HOST/staging/package.tgz
-#  - ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST staging/test.sh
+  - tar -czf package.tgz build
+  - export SSHPASS=$DEPLOY_PASS
+  - curl --ftp-create-dirs -T package.tgz -u $DEPLOY_USER:$DEPLOY_PASS ftp://$DEPLOY_HOST/staging/package.tgz
+  - ssh ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=quiet $DEPLOY_USER@$DEPLOY_HOST staging/test.sh
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_ac356ff71e5e_key -iv $encrypted_ac356ff71e5e_iv
