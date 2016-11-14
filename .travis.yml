@@ -26,7 +26,7 @@ after_success:
   - composer install --no-dev -o
   - mkdir build
   - mv * build
-  - rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/build $DEPLOY_USER@$DEPLOY_HOST:staging/
+  - rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/ $DEPLOY_USER@$DEPLOY_HOST:/staging/
 
 #  - tar -czf package.tgz build
 #  - export SSHPASS=$DEPLOY_PASS
@@ -36,6 +36,6 @@ after_success:
 before_install:
   - openssl aes-256-cbc -K $encrypted_ac356ff71e5e_key -iv $encrypted_ac356ff71e5e_iv
     -in deploy_rsa.enc -out deploy_rsa -d
-  - eval "$(ssh-agent -s)"
   - chmod 600 deploy_rsa
-  - ssh-add deploy_rsa
+#  - eval "$(ssh-agent -s)"
+#  - ssh-add deploy_rsa
