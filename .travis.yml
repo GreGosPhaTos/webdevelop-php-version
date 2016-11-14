@@ -23,6 +23,7 @@ after_success:
 #  - ssh-add /tmp/deploy_rsa
 #  - ls -la
   - mv deploy_rsa ~/.ssh/id_rsa
+  - ls -la ~/.ssh/
   - composer install --no-dev -o
   - mkdir build
   - mv * build
