@@ -33,3 +33,4 @@ after_success:
 before_install:
   - openssl aes-256-cbc -K $encrypted_ac356ff71e5e_key -iv $encrypted_ac356ff71e5e_iv
     -in deploy_rsa.enc -out deploy_rsa -d
+  - chmod 600 /tmp/deploy_rsa
