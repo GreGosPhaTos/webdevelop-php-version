@@ -9,5 +9,4 @@ web/.htaccess
 php.ini
 deploy_rsa
 deploy_rsa.pub
-deploy_rsa.enc
 .htaccess*
