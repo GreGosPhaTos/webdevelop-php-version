@@ -1,4 +1,4 @@
-# webdevelopV2
+# webdevelop PHP version (deprecated)
 webdevelop.fr new version
 
 
